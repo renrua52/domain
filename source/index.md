@@ -1,5 +1,5 @@
 ---
-title: Domain
+title: Ziri 的灵质空间
 layout: page
 ---
 
