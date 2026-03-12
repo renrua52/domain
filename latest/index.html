@@ -196,7 +196,7 @@
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">Edited on</span>
-      <time title="Modified: 2026-03-12 16:53:45" itemprop="dateModified" datetime="2026-03-12T16:53:45+00:00">2026-03-12</time>
+      <time title="Modified: 2026-03-12 16:58:14" itemprop="dateModified" datetime="2026-03-12T16:58:14+00:00">2026-03-12</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -282,7 +282,7 @@ Watch my comments on this game here:</p>
       <span class="post-meta-item-text">Posted on</span>
       
 
-      <time title="Created: 2026-03-12 21:46:07 / Modified: 16:53:45" itemprop="dateCreated datePublished" datetime="2026-03-12T21:46:07+00:00">2026-03-12</time>
+      <time title="Created: 2026-03-12 21:46:07 / Modified: 16:58:14" itemprop="dateCreated datePublished" datetime="2026-03-12T21:46:07+00:00">2026-03-12</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -314,38 +314,40 @@ Bob 是一名吃晃的狙击手，来探讨 Alice
 应该采取怎样的策略提高自身的存活概率。</p>
 <h2 id="游戏规则">游戏规则</h2>
 <p>我们把问题抽象为如下游戏：Alice 在 <span
-class="math inline">\(x\)</span> 坐标的整数点上运动，初始位置为 <span
-class="math inline">\(x(0)=0\)</span>。在每个整数时刻 <span
-class="math inline">\(t=0,1,2,\dots\)</span>，Alice
+class="math inline"><em>x</em></span> 坐标的整数点上运动，初始位置为
+<span class="math inline"><em>x</em>(0) = 0</span>。在每个整数时刻 <span
+class="math inline"><em>t</em> = 0, 1, 2, …</span>，Alice
 可以选择向左或右移动一个身位（对应于逃跑过程中的转向），即 <span
-class="math inline">\(x(t+1)=x(t)\pm1\)</span>；Bob 则可以在任何整数时刻
-<span class="math inline">\(t_{c}\in \mathbb{N}\)</span>，决定瞄准 <span
-class="math inline">\(x\)</span> 轴上的任何一个位置 <span
-class="math inline">\(x_{c}\in\mathbb{Z}\)</span> 开枪。Alice
-的位置在任何时刻都是被 Bob 知晓的（因为他有瞄准镜），但 Alice 并不知道
-Bob 会在哪一时刻开枪。</p>
+class="math inline"><em>x</em>(<em>t</em> + 1) = <em>x</em>(<em>t</em>) ± 1</span>；Bob
+则可以在任何整数时刻 <span
+class="math inline"><em>t</em><sub><em>c</em></sub> ∈ ℕ</span>，决定瞄准
+<span class="math inline"><em>x</em></span> 轴上的任何一个位置 <span
+class="math inline"><em>x</em><sub><em>c</em></sub> ∈ ℤ</span>
+开枪。Alice 的位置在任何时刻都是被 Bob 知晓的（因为他有瞄准镜），但
+Alice 并不知道 Bob 会在哪一时刻开枪。</p>
 <p>那么，如何定义 Bob 的「吃晃」呢？我们假设 Bob
 的反应很慢，从决定开枪到真正扣下扳机，需要 <span
-class="math inline">\(2\)</span> 个时间步；或者也可以理解为，子弹要经过
-<span class="math inline">\(2\)</span>
+class="math inline">2</span> 个时间步；或者也可以理解为，子弹要经过
+<span class="math inline">2</span>
 个时间步才能飞行到目标。无论采用哪种理解方式，总而言之，游戏遵循「Bob
 成功击中 Alice 并获胜，当且仅当 <span
-class="math inline">\(x(t_{c}+2)=x_{c}\)</span>」。很显然，Bob
+class="math inline"><em>x</em>(<em>t</em><sub><em>c</em></sub> + 2) = <em>x</em><sub><em>c</em></sub></span>」。很显然，Bob
 无论何时开枪，都只有三个合理的瞄准位置，让他有机会命中，分别是 <span
-class="math inline">\(x(t_{c}), x(t_{c})+2, x(t_{c})-2\)</span>。</p>
+class="math inline"><em>x</em>(<em>t</em><sub><em>c</em></sub>), <em>x</em>(<em>t</em><sub><em>c</em></sub>) + 2, <em>x</em>(<em>t</em><sub><em>c</em></sub>) − 2</span>。</p>
 <p>为了让 Alice 有一丝存活的概率，我们假设 Bob
 只有一发子弹。草地是无限大且没有掩体的，即该游戏的进行时间是无限的。这个游戏我们记为
 <span
-class="math inline">\(G\)</span>。粗略地讲，我们希望求出，在双方的最优策略下，Alice
+class="math inline"><em>G</em></span>。粗略地讲，我们希望求出，在双方的最优策略下，Alice
 的存活概率是多少；稍后我们将给出这个问题的严格叙述。</p>
 <p>为了便于分析，我们也定义该游戏的有限时间版本：我们定义 <span
-class="math inline">\(G_{n}\)</span> 与上述游戏唯一的区别是，我们限制
-Bob 必须在第 <span class="math inline">\(n\)</span>
-个时刻及之前开枪，即进一步要求 <span class="math inline">\(t_{c}\in
-\{0,1,\dots,n\}\)</span>。我们将通过分析 <span
-class="math inline">\(n\to \infty\)</span> 时 <span
-class="math inline">\(G_{n}\)</span> 的性质来获得 <span
-class="math inline">\(G\)</span> 的性质。</p>
+class="math inline"><em>G</em><sub><em>n</em></sub></span>
+与上述游戏唯一的区别是，我们限制 Bob 必须在第 <span
+class="math inline"><em>n</em></span> 个时刻及之前开枪，即进一步要求
+<span
+class="math inline"><em>t</em><sub><em>c</em></sub> ∈ {0, 1, …, <em>n</em>}</span>。我们将通过分析
+<span class="math inline"><em>n</em> → ∞</span> 时 <span
+class="math inline"><em>G</em><sub><em>n</em></sub></span> 的性质来获得
+<span class="math inline"><em>G</em></span> 的性质。</p>
 <h2 id="博弈论科普">博弈论科普</h2>
 <p>我们刚刚谈到，我们想要求解的问题是：</p>
 <blockquote>
@@ -357,80 +359,83 @@ class="math inline">\(G\)</span> 的性质。</p>
 <p>事实上，上述游戏是「双玩家零和博弈」的一个实例，这是博弈论研究的最简单的一类问题，有非常成熟的工具解决它。下面我们为没有接触过相关理论的读者介绍所需的基础概念。如果读者已经非常熟悉，请跳过这一节。</p>
 <p>在一个双玩家零和博弈中，最基本的情形是，双方玩家都采取一个确定的策略；两名玩家（Alice
 和 Bob）的策略集（考虑有限情形）是两个有限集（不妨编号为 <span
-class="math inline">\(\{1,2,\dots,n\}\)</span> 和 <span
-class="math inline">\(\{1,2,\dots,m\}\)</span>），而博弈的 payoff <span
-class="math display">\[R(i,j)=A_{ij},\quad
-i\in\{1,\dots,n\},j\in\{1,\dots,m\}\]</span>完全由两个玩家的策略决定，因此可以总结为一个矩阵
-<span class="math inline">\(A\in\mathbb{R}^{n\times
-m}\)</span>。对于两个玩家而言，他们的收益总是互为相反数，即分别为 <span
-class="math inline">\(-R(i,j)\)</span> 和 <span
-class="math inline">\(R(i,j)\)</span>。Alice 的目标是使 <span
-class="math inline">\(-R(i,j)\)</span> 尽可能大（即最小化 <span
-class="math inline">\(R(i,j)\)</span> 的值），Bob 的目标是使 <span
-class="math inline">\(R(i,j)\)</span> 尽可能大。</p>
+class="math inline">{1, 2, …, <em>n</em>}</span> 和 <span
+class="math inline">{1, 2, …, <em>m</em>}</span>），而博弈的 payoff
+<span
+class="math display"><em>R</em>(<em>i</em>, <em>j</em>) = <em>A</em><sub><em>i</em><em>j</em></sub>,  <em>i</em> ∈ {1, …, <em>n</em>}, <em>j</em> ∈ {1, …, <em>m</em>}</span>完全由两个玩家的策略决定，因此可以总结为一个矩阵
+<span
+class="math inline"><em>A</em> ∈ ℝ<sup><em>n</em> × <em>m</em></sup></span>。对于两个玩家而言，他们的收益总是互为相反数，即分别为
+<span class="math inline">−<em>R</em>(<em>i</em>, <em>j</em>)</span> 和
+<span
+class="math inline"><em>R</em>(<em>i</em>, <em>j</em>)</span>。Alice
+的目标是使 <span
+class="math inline">−<em>R</em>(<em>i</em>, <em>j</em>)</span>
+尽可能大（即最小化 <span
+class="math inline"><em>R</em>(<em>i</em>, <em>j</em>)</span>
+的值），Bob 的目标是使 <span
+class="math inline"><em>R</em>(<em>i</em>, <em>j</em>)</span>
+尽可能大。</p>
 <p>在博弈论中，我们更关心双方玩家在「随机化策略」的意义下，能够获得的期望
 payoff、以及相对应的「混合策略」是什么。一个混合策略即是在所有的策略上的概率分布。将分布写成向量，即两个玩家的策略
-<span class="math inline">\(\mathbf{x},\mathbf{y}\)</span> 分别属于
-<span class="math display">\[\begin{align} \mathbf{x}\in
+<span class="math inline"><strong>x</strong>, <strong>y</strong></span>
+分别属于 <span class="math display">$$\begin{align} \mathbf{x}\in
 \Delta^{n}:=\left\{\mathbf{x}:\sum\limits_{i=1}^{n}x_{i}=1,x_{i}\geq0\right\}
 \\
 \mathbf{y}\in
 \Delta^{m}:=\left\{\mathbf{x}:\sum\limits_{j=1}^{m}y_{j}=1,y_{j}\geq0\right\}
-\end{align}\]</span> 那么，最终「Alice 选择 <span
-class="math inline">\(i\)</span>，Bob 选择 <span
-class="math inline">\(j\)</span>」这个事件出现的概率是 <span
-class="math inline">\(x_{i}y_{i}\)</span>，因此，payoff 的期望是</p>
-<p><span class="math display">\[
+\end{align}$$</span> 那么，最终「Alice 选择 <span
+class="math inline"><em>i</em></span>，Bob 选择 <span
+class="math inline"><em>j</em></span>」这个事件出现的概率是 <span
+class="math inline"><em>x</em><sub><em>i</em></sub><em>y</em><sub><em>i</em></sub></span>，因此，payoff
+的期望是</p>
+<p><span class="math display">$$
 R(i,j) := \mathbb{E}_{i\sim\mathbf{x},j\sim\mathbf{y}}A_{ij}
 =\sum\limits_{ij}A_{ij}x_{i}y_{j}=
 \mathbf{x}^{T}A\mathbf{y}
-\]</span></p>
+$$</span></p>
 <p>这是一个双线性形式。因此，这类游戏也被称为 finite-dimensional
 zero-sum bilinear game。</p>
 <p>那么，作为玩家之一，在<strong>不事先知道对方策略</strong>的前提下，应该如何选择己方的策略呢？我们以
 Alice 的视角为例：假定她选择策略 <span
-class="math inline">\(\mathbf{x}\)</span>，那么在最坏情形下（这里的变量即是对方的策略
-<span class="math inline">\(\mathbf{y}\)</span>，对 Alice
-来说，最坏情形即是 <span class="math inline">\(R(i,j)\)</span>
+class="math inline"><strong>x</strong></span>，那么在最坏情形下（这里的变量即是对方的策略
+<span class="math inline"><strong>y</strong></span>，对 Alice
+来说，最坏情形即是 <span
+class="math inline"><em>R</em>(<em>i</em>, <em>j</em>)</span>
 最大的时候，因为她希望最小化之），她能保证的结果是 <span
-class="math display">\[\max_{\mathbf{y}} \mathbf{x}^{T}A\mathbf{y}=
-\max_{j} \mathbf{x}^{T}A\mathbf{e_{j}}=\max_{j}\mathbf{x}^{T}A_{\cdot
-j}\]</span>其中 <span class="math inline">\(A_{\cdot j}\)</span> 表示
-<span class="math inline">\(A\)</span> 的第 <span
-class="math inline">\(j\)</span>
+class="math display">max<sub><strong>y</strong></sub><strong>x</strong><sup><em>T</em></sup><em>A</em><strong>y</strong> = max<sub><em>j</em></sub><strong>x</strong><sup><em>T</em></sup><em>A</em><strong>e</strong><sub><strong>j</strong></sub> = max<sub><em>j</em></sub><strong>x</strong><sup><em>T</em></sup><em>A</em><sub>⋅<em>j</em></sub></span>其中
+<span class="math inline"><em>A</em><sub>⋅<em>j</em></sub></span> 表示
+<span class="math inline"><em>A</em></span> 的第 <span
+class="math inline"><em>j</em></span>
 个列向量；第一个等号是因为，我们总可以在 <span
-class="math inline">\(\mathbf{x}^{T}A\)</span>
+class="math inline"><strong>x</strong><sup><em>T</em></sup><em>A</em></span>
 最大的分量上赋予全部的概率（即取 <span
-class="math inline">\(\mathbf{y}\)</span> 是 one-hot
+class="math inline"><strong>y</strong></span> 是 one-hot
 向量），以此最大化想要的值。</p>
 <p>Alice
 希望最坏情况下的结果尽可能好，因此她希望最小化「上述值」，即她希望从下式中求解
-<span class="math inline">\(\mathbf{x}\)</span> 作为她的最优策略：<span
-class="math display">\[\min_\mathbf{x}\max_{\mathbf{y}}
-\mathbf{x}^{T}A\mathbf{y}=\min_{\mathbf{x}\in\Delta^{n}}\max_{j\in
-\{1,\dots,m\}} \mathbf{x}^{T}A_{\cdot
-j}\]</span>容易看出，这等价于如下线性规划问题 <span
-class="math display">\[\begin{align}
+<span class="math inline"><strong>x</strong></span>
+作为她的最优策略：<span
+class="math display">min<sub><strong>x</strong></sub>max<sub><strong>y</strong></sub><strong>x</strong><sup><em>T</em></sup><em>A</em><strong>y</strong> = min<sub><strong>x</strong> ∈ <em>Δ</em><sup><em>n</em></sup></sub>max<sub><em>j</em> ∈ {1, …, <em>m</em>}</sub><strong>x</strong><sup><em>T</em></sup><em>A</em><sub>⋅<em>j</em></sub></span>容易看出，这等价于如下线性规划问题
+<span class="math display">$$\begin{align}
 \max_{t\in\mathbb{R}, x\in \mathbb{R}^{n}} t \quad \text{s.t.} \quad
 t-x^{T}A_{\cdot j}&amp;\leq0, \forall j \\
 \sum\limits_{i} x_{i}&amp;=1\\
 x_{i}&amp;\geq 0,\forall i
-\end{align}\]</span>因而是有程序化的方法求解的。</p>
-<p>同理，Bob 的最优策略 <span class="math inline">\(\mathbf{y}\)</span>
-通过求解下式得到 <span
-class="math display">\[\max_{\mathbf{y}}\min_\mathbf{x}
-\mathbf{x}^{T}A\mathbf{y}\]</span>
+\end{align}$$</span>因而是有程序化的方法求解的。</p>
+<p>同理，Bob 的最优策略 <span
+class="math inline"><strong>y</strong></span> 通过求解下式得到 <span
+class="math display">max<sub><strong>y</strong></sub>min<sub><strong>x</strong></sub><strong>x</strong><sup><em>T</em></sup><em>A</em><strong>y</strong></span>
 至此，问题的对称性已经初具雏形。由于其对称的形式，此类博弈也被称为
 min-max game。</p>
 <h2 id="纳什均衡">纳什均衡</h2>
 <p>下面的定理给出了我们要用到的核心结论： <strong>定理 (von
 Neumann)</strong>. 对于任意 min-max game，存在 <span
-class="math inline">\(x^{*}\in\Delta^{n},y^{*}\in\Delta^{m}\)</span>
-满足 <span class="math display">\[\min_{\mathbf{x}}\max_{\mathbf{y}}
-\mathbf{x}^{T}A\mathbf{y}=\max_{\mathbf{y}}\min_{\mathbf{x}}\mathbf{x}^{T}A\mathbf{y}=\mathbf{x}^{*T}A\mathbf{y}^{*}:=V\]</span><span
-class="math inline">\((x^*,y^*)\)</span>
+class="math inline"><em>x</em><sup>*</sup> ∈ <em>Δ</em><sup><em>n</em></sup>, <em>y</em><sup>*</sup> ∈ <em>Δ</em><sup><em>m</em></sup></span>
+满足 <span
+class="math display">min<sub><strong>x</strong></sub>max<sub><strong>y</strong></sub><strong>x</strong><sup><em>T</em></sup><em>A</em><strong>y</strong> = max<sub><strong>y</strong></sub>min<sub><strong>x</strong></sub><strong>x</strong><sup><em>T</em></sup><em>A</em><strong>y</strong> = <strong>x</strong><sup>*<em>T</em></sup><em>A</em><strong>y</strong><sup>*</sup> := <em>V</em></span><span
+class="math inline">(<em>x</em><sup>*</sup>, <em>y</em><sup>*</sup>)</span>
 被称为这个博弈的<strong>纳什均衡</strong>。由纳什均衡定义的 <span
-class="math inline">\(V\)</span> 被称为博弈的「价值」。</p>
+class="math inline"><em>V</em></span> 被称为博弈的「价值」。</p>
 <p>von Neumann 定理有诸多证明，网络上很容易搜索到。证明之一是：验证两个
 min-max game
 对应的线性规划问题互为对偶，并利用强对偶性。如果读者没有接触过优化理论的知识，也没有关系，本文的叙述并不依赖该定理的证明。</p>
@@ -440,28 +445,30 @@ min-max game
 </blockquote>
 <p>这个结论是十分迷人的：虽然双方玩家都是在不知晓对方策略的情形下，独立导出的己方最优策略；但双方策略形成的均衡，却使得双方都没有改变策略的动机（即使知晓了对方的策略）。</p>
 <p>对于一般的零和博弈，其价值往往难以计算，但上述定理保证了其存在性，并且可以通过构造策略来证明它的上下界。具体地，如果我们构造了某个策略
-<span class="math inline">\(\mathbf{x}_{0}\)</span>，满足 <span
-class="math display">\[\forall \mathbf{y}\in\Delta^{m},\quad
-\mathbf{x}_{0}^{T}A\mathbf{y} \leq V_{0}\]</span>即 <span
-class="math display">\[\max_{\mathbf{y}}\mathbf{x}_{0}^{T}
-A\mathbf{y}\leq V_{0}\]</span>因而 <span
-class="math display">\[V=\min_{\mathbf{x}}\max_{\mathbf{y}}\mathbf{x}^{T}A\mathbf{y}\leq
-\max_{\mathbf{y}}\mathbf{x}_{0}^{T} A\mathbf{y}\leq V_{0}\]</span>即
-<span class="math inline">\(V\)</span> 只会比任意 Alice
-策略保证的下界更小，即给出了一个 <span class="math inline">\(V\)</span>
-的上界。同理，可以通过构造 Bob 的策略来给出 <span
-class="math inline">\(V\)</span> 的下界。</p>
+<span class="math inline"><strong>x</strong><sub>0</sub></span>，满足
+<span
+class="math display">∀<strong>y</strong> ∈ <em>Δ</em><sup><em>m</em></sup>,  <strong>x</strong><sub>0</sub><sup><em>T</em></sup><em>A</em><strong>y</strong> ≤ <em>V</em><sub>0</sub></span>即
+<span
+class="math display">max<sub><strong>y</strong></sub><strong>x</strong><sub>0</sub><sup><em>T</em></sup><em>A</em><strong>y</strong> ≤ <em>V</em><sub>0</sub></span>因而
+<span
+class="math display"><em>V</em> = min<sub><strong>x</strong></sub>max<sub><strong>y</strong></sub><strong>x</strong><sup><em>T</em></sup><em>A</em><strong>y</strong> ≤ max<sub><strong>y</strong></sub><strong>x</strong><sub>0</sub><sup><em>T</em></sup><em>A</em><strong>y</strong> ≤ <em>V</em><sub>0</sub></span>即
+<span class="math inline"><em>V</em></span> 只会比任意 Alice
+策略保证的下界更小，即给出了一个 <span
+class="math inline"><em>V</em></span> 的上界。同理，可以通过构造 Bob
+的策略来给出 <span class="math inline"><em>V</em></span> 的下界。</p>
 <h2 id="有限时间">有限时间</h2>
-<p>我们用 <span class="math inline">\(G_{0}\)</span>
+<p>我们用 <span class="math inline"><em>G</em><sub>0</sub></span>
 来作为实例，感受一下 von Neumann 定理的强度。在博弈 <span
-class="math inline">\(G_{0}\)</span> 中，Bob 只能在 <span
-class="math inline">\(t_{c}=0\)</span> 时刻开枪，因此其有意义的策略仅有
-<span class="math inline">\(x_{c}=-2,0,2\)</span>，共 <span
-class="math inline">\(n=3\)</span> 种；Alice
+class="math inline"><em>G</em><sub>0</sub></span> 中，Bob 只能在 <span
+class="math inline"><em>t</em><sub><em>c</em></sub> = 0</span>
+时刻开枪，因此其有意义的策略仅有 <span
+class="math inline"><em>x</em><sub><em>c</em></sub> = −2, 0, 2</span>，共
+<span class="math inline"><em>n</em> = 3</span> 种；Alice
 是否中枪，只取决于其前两个时刻的行为，因此其策略（用两个时刻先后到达的位置表示）包括
-<span class="math inline">\((-1,-2),(-1,0),(1,0),(1,2)\)</span> 共 <span
-class="math inline">\(m=4\)</span> 种。这个博弈的 payoff 矩阵 <span
-class="math inline">\(A\in\mathbb{R}^{4\times 3}\)</span> 因而是</p>
+<span class="math inline">(−1, −2), (−1, 0), (1, 0), (1, 2)</span> 共
+<span class="math inline"><em>m</em> = 4</span> 种。这个博弈的 payoff
+矩阵 <span class="math inline"><em>A</em> ∈ ℝ<sup>4 × 3</sup></span>
+因而是</p>
 <table>
 <thead>
 <tr>
@@ -499,39 +506,39 @@ class="math inline">\(A\in\mathbb{R}^{4\times 3}\)</span> 因而是</p>
 </tbody>
 </table>
 <p>对于任意 Alice 的逃跑策略 <span
-class="math inline">\(\mathbf{x}\)</span>，Bob 都可以选择瞄准三个位置中
-Alice
+class="math inline"><strong>x</strong></span>，Bob
+都可以选择瞄准三个位置中 Alice
 到达的概率最大的那个，以最大化其收益（即命中的概率），显然这个值不小于
-<span class="math inline">\(1/3\)</span>。因此，Alice
+<span class="math inline">1/3</span>。因此，Alice
 应该让这三个概率相等，即使得 <span
-class="math display">\[P(-1,-2)=P(-1,0)+P(1,0)=P(1,2)=
-\frac{1}{3}\]</span>一个满足要求的策略是 <span
-class="math inline">\(\mathbf{x}^{*}=
-[1/3,1/6,1/6,1/3]^{T}\)</span>，请读者验证，无论此时 <span
-class="math inline">\(\mathbf{y}\)</span> 是什么，<span
-class="math inline">\(\mathbf{x^{*}}^{T}A\mathbf{y}\)</span> 的值都等于
-<span
-class="math inline">\(1/3\)</span>。类似地，请读者进一步验证，<span
-class="math inline">\(\mathbf{y}^{*}=[1/3,1/3,1/3]^{T}\)</span>
+class="math display">$$P(-1,-2)=P(-1,0)+P(1,0)=P(1,2)=
+\frac{1}{3}$$</span>一个满足要求的策略是 <span
+class="math inline"><strong>x</strong><sup>*</sup> = [1/3, 1/6, 1/6, 1/3]<sup><em>T</em></sup></span>，请读者验证，无论此时
+<span class="math inline"><strong>y</strong></span> 是什么，<span
+class="math inline"><strong>x</strong><sup><strong>*</strong></sup><sup><em>T</em></sup><em>A</em><strong>y</strong></span>
+的值都等于 <span
+class="math inline">1/3</span>。类似地，请读者进一步验证，<span
+class="math inline"><strong>y</strong><sup>*</sup> = [1/3, 1/3, 1/3]<sup><em>T</em></sup></span>
 也满足类似的性质，从而 <span
-class="math inline">\((\mathbf{x}^{*},\mathbf{y}^{*})\)</span>
+class="math inline">(<strong>x</strong><sup>*</sup>, <strong>y</strong><sup>*</sup>)</span>
 是纳什均衡，博弈的价值为 <span
-class="math inline">\(v(G_{0})=1/3\)</span>。</p>
+class="math inline"><em>v</em>(<em>G</em><sub>0</sub>) = 1/3</span>。</p>
 <p>类似地，可以证明 <span
-class="math inline">\(v(G_{1})=1/3\)</span>。我们指出，<span
-class="math inline">\(v(G_{2})&gt;1/3\)</span>。</p>
+class="math inline"><em>v</em>(<em>G</em><sub>1</sub>) = 1/3</span>。我们指出，<span
+class="math inline"><em>v</em>(<em>G</em><sub>2</sub>) &gt; 1/3</span>。</p>
 <p>也许一些敏锐的读者会感到惊讶：不管 Bob 在哪一时刻开枪，Alice
-都可以选择让自己 <span class="math inline">\(2\)</span>
+都可以选择让自己 <span class="math inline">2</span>
 个时刻后处在三个位置的概率相等，从而让中弹的概率（即游戏的价值）至多是
-<span class="math inline">\(1/3\)</span>；按照这个思路，对于任意 <span
-class="math inline">\(n\)</span> 价值不应该恒等于 <span
-class="math inline">\(1/3\)</span> 吗？问题的关键在于，<strong>Alice
+<span class="math inline">1/3</span>；按照这个思路，对于任意 <span
+class="math inline"><em>n</em></span> 价值不应该恒等于 <span
+class="math inline">1/3</span> 吗？问题的关键在于，<strong>Alice
 并不知道 Bob
 开枪的时刻</strong>。为了实现上述策略，她必须保证自己在<strong>每一时刻</strong>的概率都均摊，通过研究
-<span class="math inline">\(G_{2}\)</span>
+<span class="math inline"><em>G</em><sub>2</sub></span>
 的性质，就可以发现这是做不到的。当然，如果 Alice 确切地知道 Bob
-何时开枪，那么确实有 <span class="math inline">\(v(G_{n})=1/3, \forall
-n\)</span> 了。</p>
+何时开枪，那么确实有 <span
+class="math inline"><em>v</em>(<em>G</em><sub><em>n</em></sub>) = 1/3, ∀<em>n</em></span>
+了。</p>
 <h2 id="无限时间">无限时间</h2>
 <p>至此，完整问题的严格叙述已经呼之欲出了。我们想要解决的问题：</p>
 <blockquote>
@@ -539,174 +546,196 @@ n\)</span> 了。</p>
 </blockquote>
 <p>事实上就是求：</p>
 <blockquote>
-<p><span class="math inline">\(\lim_{n\to\infty} v(G_{n})\)</span></p>
+<p><span
+class="math inline">lim<sub><em>n</em> → ∞</sub><em>v</em>(<em>G</em><sub><em>n</em></sub>)</span></p>
 </blockquote>
-<p>因此，我们要研究 <span class="math inline">\(v(G_{n})\)</span>
+<p>因此，我们要研究 <span
+class="math inline"><em>v</em>(<em>G</em><sub><em>n</em></sub>)</span>
 作为一个数列的性质。首先，它显然是单调不降的，这是因为对于狙击手 Bob
-而言，在 <span class="math inline">\(G_{n}\)</span> 中，他总可以采取
-<span class="math inline">\(G_{n-1}\)</span>
+而言，在 <span
+class="math inline"><em>G</em><sub><em>n</em></sub></span>
+中，他总可以采取 <span
+class="math inline"><em>G</em><sub><em>n</em> − 1</sub></span>
 中的策略，这样他至少可以保证 <span
-class="math inline">\(v(G_{n-1})\)</span> 的结果，因此至少有 <span
-class="math inline">\(v(G_{n})\geq v(G_{n-1})\)</span>。特别地，<span
-class="math inline">\(v(G_{n})\geq 1/3\)</span>。</p>
+class="math inline"><em>v</em>(<em>G</em><sub><em>n</em> − 1</sub>)</span>
+的结果，因此至少有 <span
+class="math inline"><em>v</em>(<em>G</em><sub><em>n</em></sub>) ≥ <em>v</em>(<em>G</em><sub><em>n</em> − 1</sub>)</span>。特别地，<span
+class="math inline"><em>v</em>(<em>G</em><sub><em>n</em></sub>) ≥ 1/3</span>。</p>
 <p>另一方面，对于任意 <span
-class="math inline">\(G_{n}\)</span>，如前文所说，我们可以也构造一个
+class="math inline"><em>G</em><sub><em>n</em></sub></span>，如前文所说，我们可以也构造一个
 Alice 的策略 <span
-class="math inline">\(\mathbf{x}\)</span>，保证任何情况下 <span
-class="math inline">\(\mathbf{x}^{T}A\mathbf{y}\)</span>
+class="math inline"><strong>x</strong></span>，保证任何情况下 <span
+class="math inline"><strong>x</strong><sup><em>T</em></sup><em>A</em><strong>y</strong></span>
 不大于某个常数，从而证明一个 <span
-class="math inline">\(v(G_{n})\)</span>
+class="math inline"><em>v</em>(<em>G</em><sub><em>n</em></sub>)</span>
 的上界。我们尝试构造如下一类策略，它包含一个参数 <span
-class="math inline">\(p\in[0,1]\)</span>：</p>
+class="math inline"><em>p</em> ∈ [0, 1]</span>：</p>
 <blockquote>
-<p>在 <span class="math inline">\(t=0\)</span> 时，Alice 以 <span
-class="math inline">\(p\)</span> 的概率向左走（到达 <span
-class="math inline">\(-1\)</span>），以 <span
-class="math inline">\(1-p\)</span> 的概率向右走（到达 <span
-class="math inline">\(+1\)</span>）。此后，她每一步以 <span
-class="math inline">\(p\)</span> 的概率保持上一步的方向继续前进，或以
-<span class="math inline">\(1-p\)</span> 的概率调转方向。</p>
+<p>在 <span class="math inline"><em>t</em> = 0</span> 时，Alice 以 <span
+class="math inline"><em>p</em></span> 的概率向左走（到达 <span
+class="math inline">−1</span>），以 <span
+class="math inline">1 − <em>p</em></span> 的概率向右走（到达 <span
+class="math inline">+1</span>）。此后，她每一步以 <span
+class="math inline"><em>p</em></span>
+的概率保持上一步的方向继续前进，或以 <span
+class="math inline">1 − <em>p</em></span> 的概率调转方向。</p>
 </blockquote>
 <p>这个策略的重要之处在于，它每一步的决策过程都是完全对称的（这与我们上一节中为
-<span class="math inline">\(G_{0}\)</span>
+<span class="math inline"><em>G</em><sub>0</sub></span>
 构造的最佳策略不同）。按照这样定义的策略，无论 Bob 在何时 <span
-class="math inline">\(t_{c}\)</span> 开枪，<span
-class="math inline">\(t_{c}+2\)</span> 时刻 Alice 的位置在 <span
-class="math inline">\(x(t_{c})-2,x(t_{c}),x(t_{c})+2\)</span>
-三个点的概率值总分别是 <span class="math inline">\(p^{2},1-p,
-p(1-p)\)</span> 或 <span
-class="math inline">\(p(1-p),1-p,p^{2}\)</span>。对 Alice
-而言的最坏情况下，Bob
+class="math inline"><em>t</em><sub><em>c</em></sub></span> 开枪，<span
+class="math inline"><em>t</em><sub><em>c</em></sub> + 2</span> 时刻
+Alice 的位置在 <span
+class="math inline"><em>x</em>(<em>t</em><sub><em>c</em></sub>) − 2, <em>x</em>(<em>t</em><sub><em>c</em></sub>), <em>x</em>(<em>t</em><sub><em>c</em></sub>) + 2</span>
+三个点的概率值总分别是 <span
+class="math inline"><em>p</em><sup>2</sup>, 1 − <em>p</em>, <em>p</em>(1 − <em>p</em>)</span>
+或 <span
+class="math inline"><em>p</em>(1 − <em>p</em>), 1 − <em>p</em>, <em>p</em><sup>2</sup></span>。对
+Alice 而言的最坏情况下，Bob
 总会选择瞄准这三个概率中最大者对应的位置，因此，Alice
 应当尽可能使这三个值都很小。注意到 <span
-class="math inline">\(1-p&gt;p(1-p)\)</span>，因此事实上，这一类策略中最优者应该最小化
-<span class="math display">\[\max\{p^{2},1-p\}\]</span>求得 <span
-class="math display">\[p= \frac{2}{1+\sqrt{5}}\]</span>此时 Bob 的
-payoff（即他能保证的最大命中概率）为 <span class="math display">\[1-p=
-\frac{\sqrt{5}-1}{\sqrt{5}+1}\]</span>这不是最佳策略，因此该值只是一个上界，即
-<span class="math display">\[v(G_{n})\leq
-\frac{\sqrt{5}-1}{\sqrt{5}+1}\]</span> 至此我们证明了，<span
-class="math inline">\(v(G_{n})\)</span> 是一个单调有界的序列，因此保证了
-<span class="math inline">\(\lim_{n\to\infty} v(G_{n})\)</span>
+class="math inline">1 − <em>p</em> &gt; <em>p</em>(1 − <em>p</em>)</span>，因此事实上，这一类策略中最优者应该最小化
+<span
+class="math display">max {<em>p</em><sup>2</sup>, 1 − <em>p</em>}</span>求得
+<span class="math display">$$p= \frac{2}{1+\sqrt{5}}$$</span>此时 Bob 的
+payoff（即他能保证的最大命中概率）为 <span class="math display">$$1-p=
+\frac{\sqrt{5}-1}{\sqrt{5}+1}$$</span>这不是最佳策略，因此该值只是一个上界，即
+<span class="math display">$$v(G_{n})\leq
+\frac{\sqrt{5}-1}{\sqrt{5}+1}$$</span> 至此我们证明了，<span
+class="math inline"><em>v</em>(<em>G</em><sub><em>n</em></sub>)</span>
+是一个单调有界的序列，因此保证了 <span
+class="math inline">lim<sub><em>n</em> → ∞</sub><em>v</em>(<em>G</em><sub><em>n</em></sub>)</span>
 的存在性（事实上，如果读者足够细心，应当在此之前就提出了存在性的疑问）。那么，这个上界能取到吗？首先，我们观察到一个有趣的事实：</p>
-<p><strong>命题</strong>. <span class="math inline">\(v(G_{n})\)</span>
+<p><strong>命题</strong>. <span
+class="math inline"><em>v</em>(<em>G</em><sub><em>n</em></sub>)</span>
 是有理数。 <strong>证明</strong>. <span
-class="math inline">\(G_{n}\)</span> 的 payoff matrix <span
-class="math inline">\(A\)</span> 是一个元素均为 0 或 1 的矩阵。这个
-min-max game 对应的线性规划问题为：<span
-class="math display">\[\begin{align}
+class="math inline"><em>G</em><sub><em>n</em></sub></span> 的 payoff
+matrix <span class="math inline"><em>A</em></span> 是一个元素均为 0 或 1
+的矩阵。这个 min-max game 对应的线性规划问题为：<span
+class="math display">$$\begin{align}
 \max_{t\in\mathbb{R}, x\in \mathbb{R}^{n}} t \quad \text{s.t.} \quad
 t-x^{T}A_{\cdot j}&amp;\leq0, \forall j \\
 \sum\limits_{i} x_{i}&amp;=1\\
 x_{i}&amp;\geq 0,\forall i
-\end{align}\]</span>线性规划问题的解在可行域的顶点处取得，即 <span
-class="math inline">\((t,x)\in\mathbb{R}^{n+1}\)</span>
+\end{align}$$</span>线性规划问题的解在可行域的顶点处取得，即 <span
+class="math inline">(<em>t</em>, <em>x</em>) ∈ ℝ<sup><em>n</em> + 1</sup></span>
 是某个由部分约束方程的等式形式确定的解。但是，三类约束方程的变量系数均为有理数，因此
-<span class="math inline">\(t\)</span> 也是有理数。</p>
+<span class="math inline"><em>t</em></span> 也是有理数。</p>
 <p>因此，事实上有： <strong>命题</strong>. <span
-class="math display">\[v(G_{n}) &lt;
-\frac{\sqrt{5}-1}{\sqrt{5}+1}\]</span> Samuel Karlin 于 1958
-年证明了，虽然任意有限的 <span class="math inline">\(G_{n}\)</span>
-都取不到这个上界，但 <span class="math inline">\(v(G_{n})\)</span>
+class="math display">$$v(G_{n}) &lt;
+\frac{\sqrt{5}-1}{\sqrt{5}+1}$$</span> Samuel Karlin 于 1958
+年证明了，虽然任意有限的 <span
+class="math inline"><em>G</em><sub><em>n</em></sub></span>
+都取不到这个上界，但 <span
+class="math inline"><em>v</em>(<em>G</em><sub><em>n</em></sub>)</span>
 确实收敛到这个值。证明没有用到任何高深的工具，只牵涉到一些计算技巧，对于掌握中学数学知识的读者是完全可以理解的。下面让我们来欣赏这个证明。</p>
 <h2 id="直面递推">直面递推</h2>
 <p>很容易想到，由于问题是递归定义的，应该可以对问题进行递推的拆解。对于
-<span class="math inline">\(x\in[0,1]\)</span>，我们定义 <span
-class="math inline">\(g_{n}(x)\)</span> 为：Alice 固定采取「<span
-class="math inline">\(t=0\)</span> 时，以 <span
-class="math inline">\(x\)</span> 的概率向左，<span
-class="math inline">\(1-x\)</span> 的概率向右」的策略时，<span
-class="math inline">\(G_{n}\)</span> 的价值。显然有 <span
-class="math inline">\(v(G_{n})=\min_{x}
-g_{n}(x)\)</span>。很显然也应该有 <span
-class="math inline">\(g_{n}(x)=g_{n}(1-x)\)</span>，<span
-class="math inline">\(g_{n}(x)\leq g_{n+1}(x)\)</span>。</p>
-<p>那么，<span class="math inline">\(g_{n}(x)\)</span>
+<span class="math inline"><em>x</em> ∈ [0, 1]</span>，我们定义 <span
+class="math inline"><em>g</em><sub><em>n</em></sub>(<em>x</em>)</span>
+为：Alice 固定采取「<span class="math inline"><em>t</em> = 0</span>
+时，以 <span class="math inline"><em>x</em></span> 的概率向左，<span
+class="math inline">1 − <em>x</em></span> 的概率向右」的策略时，<span
+class="math inline"><em>G</em><sub><em>n</em></sub></span>
+的价值。显然有 <span
+class="math inline"><em>v</em>(<em>G</em><sub><em>n</em></sub>) = min<sub><em>x</em></sub><em>g</em><sub><em>n</em></sub>(<em>x</em>)</span>。很显然也应该有
+<span
+class="math inline"><em>g</em><sub><em>n</em></sub>(<em>x</em>) = <em>g</em><sub><em>n</em></sub>(1 − <em>x</em>)</span>，<span
+class="math inline"><em>g</em><sub><em>n</em></sub>(<em>x</em>) ≤ <em>g</em><sub><em>n</em> + 1</sub>(<em>x</em>)</span>。</p>
+<p>那么，<span
+class="math inline"><em>g</em><sub><em>n</em></sub>(<em>x</em>)</span>
 的递推是什么呢？这依赖于 Alice
 第二步的策略，所以我们记其策略中，「第一步向左时，第二步也向左」的概率为
 <span
-class="math inline">\(c\)</span>，「第一步向右时，第二步向左」的概率为
-<span class="math inline">\(d\)</span>。这样，用 <span
-class="math inline">\(x,c,d\)</span> 三个参数，我们就可以描述 Alice
+class="math inline"><em>c</em></span>，「第一步向右时，第二步向左」的概率为
+<span class="math inline"><em>d</em></span>。这样，用 <span
+class="math inline"><em>x</em>, <em>c</em>, <em>d</em></span>
+三个参数，我们就可以描述 Alice
 在两步之内的任何一种策略了。两步之后，她可以所处的位置和概率分别为 <span
-class="math display">\[\begin{align} &amp;P(x(2)=x(0)-2) &amp;= xc \\
+class="math display">$$\begin{align} &amp;P(x(2)=x(0)-2) &amp;= xc \\
 &amp;P(x(2)=x(0)) &amp;= x(1-c)+(1-x)d \\
 &amp;P(x(2)=x(0)+2) &amp;= (1-x)(1-d)
-\end{align}\]</span> 如果 Bob 在 <span
-class="math inline">\(t_{c}=0\)</span> 时刻开枪，那么对 Alice
-来说，最坏情况下 Bob
+\end{align}$$</span> 如果 Bob 在 <span
+class="math inline"><em>t</em><sub><em>c</em></sub> = 0</span>
+时刻开枪，那么对 Alice 来说，最坏情况下 Bob
 会瞄准这三个位置中概率最大的那一个（三个选项）；当然，只要 <span
-class="math inline">\(n&gt;0\)</span>，Bob 也可以不在 <span
-class="math inline">\(t_{c}=0\)</span>
+class="math inline"><em>n</em> &gt; 0</span>，Bob 也可以不在 <span
+class="math inline"><em>t</em><sub><em>c</em></sub> = 0</span>
 时刻开枪（第四个选项），这种情况下他只能在之后的 <span
-class="math inline">\(n-1\)</span>
+class="math inline"><em>n</em> − 1</span>
 个时刻内开枪，因此他能获得的最大收益是 <span
-class="math display">\[xg_{n-1}(c)+(1-x)g_{n-1}(d)\]</span>于是，对
+class="math display"><em>x</em><em>g</em><sub><em>n</em> − 1</sub>(<em>c</em>) + (1 − <em>x</em>)<em>g</em><sub><em>n</em> − 1</sub>(<em>d</em>)</span>于是，对
 Alice 的最坏情况下，Bob 会选择四种选项中 payoff
-最大者，因此有递推：<span class="math display">\[g_{n}(x)=
+最大者，因此有递推：<span class="math display">$$g_{n}(x)=
 \min_{c,d}\max\begin{cases} xc \\
 x(1-c)+(1-x)d  \\
 (1-x)(1-d) \\
 xg_{n-1}(c)+(1-x)g_{n-1}(d) \\
-\end{cases}\]</span>边界为 <span class="math display">\[g_{0}(x)=
+\end{cases}$$</span>边界为 <span class="math display">$$g_{0}(x)=
 \min_{c,d}\max\begin{cases} xc \\
 x(1-c)+(1-x)d  \\
 (1-x)(1-d) \\
-\end{cases}\]</span>直接计算可得，<span
-class="math inline">\(g_{0}(0)=g_{0}(1)=1/2\)</span>，<span
-class="math inline">\(g_{0}(x)= 1/3, \forall
-x\in[1/3,2/3]\)</span>，且在剩余区间内它是线性函数。</p>
-<p>设 <span class="math inline">\(g_{n}\)</span> 收敛到 <span
-class="math inline">\(g\)</span>。<span
-class="math inline">\(g(x)\)</span> 应该是递推式的不动点，即满足 <span
-class="math display">\[g(x)= \min_{c,d}\max\begin{cases} xc \\
+\end{cases}$$</span>直接计算可得，<span
+class="math inline"><em>g</em><sub>0</sub>(0) = <em>g</em><sub>0</sub>(1) = 1/2</span>，<span
+class="math inline"><em>g</em><sub>0</sub>(<em>x</em>) = 1/3, ∀<em>x</em> ∈ [1/3, 2/3]</span>，且在剩余区间内它是线性函数。</p>
+<p>设 <span class="math inline"><em>g</em><sub><em>n</em></sub></span>
+收敛到 <span class="math inline"><em>g</em></span>。<span
+class="math inline"><em>g</em>(<em>x</em>)</span>
+应该是递推式的不动点，即满足 <span class="math display">$$g(x)=
+\min_{c,d}\max\begin{cases} xc \\
 x(1-c)+(1-x)d  \\
 (1-x)(1-d) \\
 xg(c)+(1-x)g(d) \\
-\end{cases}\]</span>我们要求的即是 <span
-class="math display">\[v(G):=v=\min_{x}g(x)=\lim_{n\to\infty}\min_{x}g_{n}(x)=\lim_{n\to\infty}
-v(G_{n})\]</span>这里取得最小值的 <span class="math inline">\(x\)</span>
-不是唯一的，所以我们记满足 <span class="math inline">\(g(x)=v\)</span>
-的 <span class="math inline">\(x\)</span> 中最小者为 <span
-class="math inline">\(s\)</span>。那么应当有 <span
-class="math display">\[g(s)= \min_{c,d}\max\begin{cases} sc \\
+\end{cases}$$</span>我们要求的即是 <span
+class="math display"><em>v</em>(<em>G</em>) := <em>v</em> = min<sub><em>x</em></sub><em>g</em>(<em>x</em>) = lim<sub><em>n</em> → ∞</sub>min<sub><em>x</em></sub><em>g</em><sub><em>n</em></sub>(<em>x</em>) = lim<sub><em>n</em> → ∞</sub><em>v</em>(<em>G</em><sub><em>n</em></sub>)</span>这里取得最小值的
+<span class="math inline"><em>x</em></span> 不是唯一的，所以我们记满足
+<span class="math inline"><em>g</em>(<em>x</em>) = <em>v</em></span> 的
+<span class="math inline"><em>x</em></span> 中最小者为 <span
+class="math inline"><em>s</em></span>。那么应当有 <span
+class="math display">$$g(s)= \min_{c,d}\max\begin{cases} sc \\
 s(1-c)+(1-s)d  \\
 (1-s)(1-d) \\
 sg(c)+(1-s)g(d) \\
-\end{cases}\]</span>进一步设这里的 <span
-class="math inline">\(\min\)</span> 由 <span
-class="math inline">\(c,d\)</span> 取得，那么有 <span
-class="math display">\[v=g(s)= \max\begin{cases} sc \\
+\end{cases}$$</span>进一步设这里的 <span class="math inline">min </span>
+由 <span class="math inline"><em>c</em>, <em>d</em></span> 取得，那么有
+<span class="math display">$$v=g(s)= \max\begin{cases} sc \\
 s(1-c)+(1-s)d  \\
 (1-s)(1-d) \\
 sg(c)+(1-s)g(d) \\
-\end{cases}\]</span>注意到最后一行的 <span
-class="math inline">\(sg(c)+(1-s)g(d)\geq sv+(1-s)v \geq
-v=g(s)\)</span>，所以 <span
-class="math inline">\(g(c)=g(d)=v\)</span>，所以 <span
-class="math inline">\(c,d\geq s\)</span>，由对称性也有 <span
-class="math display">\[s\leq c,d\leq 1-s\]</span>再看第二行，我们有
-<span class="math inline">\(s(1-c)+(1-s)d \geq s^{2}+ (1-s)s =
-s\)</span>，因此 <span class="math inline">\(s\leq v\)</span>。</p>
-<p>下面我们来证明 <span class="math inline">\(s&lt;v\)</span>
-也不能成立。若不然，由 <span class="math display">\[v\geq
-(1-s)(1-d),\quad v\geq s(1-c)+(1-s)d\geq s^{2}+(1-s)d\]</span>相加得
-<span class="math display">\[2v\geq s^{2}-s+1\]</span>右边在 <span
-class="math inline">\([0,1/2]\)</span> 上是单调递减的，且 <span
-class="math inline">\(s &lt; v\leq 1/2\)</span>，因此 <span
-class="math display">\[2v\geq v^{2}-v+1\]</span>解得 <span
-class="math inline">\(v&gt; \frac{\sqrt{5}-1}{\sqrt{5}+1}\)</span>，这与
+\end{cases}$$</span>注意到最后一行的 <span
+class="math inline"><em>s</em><em>g</em>(<em>c</em>) + (1 − <em>s</em>)<em>g</em>(<em>d</em>) ≥ <em>s</em><em>v</em> + (1 − <em>s</em>)<em>v</em> ≥ <em>v</em> = <em>g</em>(<em>s</em>)</span>，所以
 <span
-class="math inline">\(v_{n}&lt;\frac{\sqrt{5}-1}{\sqrt{5}+1}\)</span>
-是矛盾的。因此，<span class="math inline">\(s=v\)</span>。</p>
-<p>因此 <span class="math inline">\(\max\)</span> 中的第二项至少是 <span
-class="math inline">\(v\)</span>，因而必须等于 <span
-class="math inline">\(v\)</span>，从而 <span
-class="math display">\[1-c=d=v\]</span>从而 <span
-class="math display">\[v\geq (1-s)(1-d)=(1-v)^{2}\]</span>解得 <span
-class="math inline">\(v\geq
-\frac{\sqrt{5}-1}{\sqrt{5}+1}\)</span>。由此证明了 <span
-class="math display">\[v=\frac{\sqrt{5}-1}{\sqrt{5}+1}\]</span></p>
+class="math inline"><em>g</em>(<em>c</em>) = <em>g</em>(<em>d</em>) = <em>v</em></span>，所以
+<span
+class="math inline"><em>c</em>, <em>d</em> ≥ <em>s</em></span>，由对称性也有
+<span
+class="math display"><em>s</em> ≤ <em>c</em>, <em>d</em> ≤ 1 − <em>s</em></span>再看第二行，我们有
+<span
+class="math inline"><em>s</em>(1 − <em>c</em>) + (1 − <em>s</em>)<em>d</em> ≥ <em>s</em><sup>2</sup> + (1 − <em>s</em>)<em>s</em> = <em>s</em></span>，因此
+<span class="math inline"><em>s</em> ≤ <em>v</em></span>。</p>
+<p>下面我们来证明 <span
+class="math inline"><em>s</em> &lt; <em>v</em></span>
+也不能成立。若不然，由 <span
+class="math display"><em>v</em> ≥ (1 − <em>s</em>)(1 − <em>d</em>),  <em>v</em> ≥ <em>s</em>(1 − <em>c</em>) + (1 − <em>s</em>)<em>d</em> ≥ <em>s</em><sup>2</sup> + (1 − <em>s</em>)<em>d</em></span>相加得
+<span
+class="math display">2<em>v</em> ≥ <em>s</em><sup>2</sup> − <em>s</em> + 1</span>右边在
+<span class="math inline">[0, 1/2]</span> 上是单调递减的，且 <span
+class="math inline"><em>s</em> &lt; <em>v</em> ≤ 1/2</span>，因此 <span
+class="math display">2<em>v</em> ≥ <em>v</em><sup>2</sup> − <em>v</em> + 1</span>解得
+<span class="math inline">$v&gt;
+\frac{\sqrt{5}-1}{\sqrt{5}+1}$</span>，这与 <span
+class="math inline">$v_{n}&lt;\frac{\sqrt{5}-1}{\sqrt{5}+1}$</span>
+是矛盾的。因此，<span
+class="math inline"><em>s</em> = <em>v</em></span>。</p>
+<p>因此 <span class="math inline">max </span> 中的第二项至少是 <span
+class="math inline"><em>v</em></span>，因而必须等于 <span
+class="math inline"><em>v</em></span>，从而 <span
+class="math display">1 − <em>c</em> = <em>d</em> = <em>v</em></span>从而
+<span
+class="math display"><em>v</em> ≥ (1 − <em>s</em>)(1 − <em>d</em>) = (1 − <em>v</em>)<sup>2</sup></span>解得
+<span class="math inline">$v\geq
+\frac{\sqrt{5}-1}{\sqrt{5}+1}$</span>。由此证明了 <span
+class="math display">$$v=\frac{\sqrt{5}-1}{\sqrt{5}+1}$$</span></p>
 
       
     </div>
@@ -769,7 +798,7 @@ class="math display">\[v=\frac{\sqrt{5}-1}{\sqrt{5}+1}\]</span></p>
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">Edited on</span>
-      <time title="Modified: 2026-03-12 16:53:45" itemprop="dateModified" datetime="2026-03-12T16:53:45+00:00">2026-03-12</time>
+      <time title="Modified: 2026-03-12 16:58:14" itemprop="dateModified" datetime="2026-03-12T16:58:14+00:00">2026-03-12</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -858,7 +887,7 @@ class="math display">\[v=\frac{\sqrt{5}-1}{\sqrt{5}+1}\]</span></p>
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">Edited on</span>
-      <time title="Modified: 2026-03-12 16:53:45" itemprop="dateModified" datetime="2026-03-12T16:53:45+00:00">2026-03-12</time>
+      <time title="Modified: 2026-03-12 16:58:14" itemprop="dateModified" datetime="2026-03-12T16:58:14+00:00">2026-03-12</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -949,7 +978,7 @@ class="math display">\[v=\frac{\sqrt{5}-1}{\sqrt{5}+1}\]</span></p>
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">Edited on</span>
-      <time title="Modified: 2026-03-12 16:53:45" itemprop="dateModified" datetime="2026-03-12T16:53:45+00:00">2026-03-12</time>
+      <time title="Modified: 2026-03-12 16:58:14" itemprop="dateModified" datetime="2026-03-12T16:58:14+00:00">2026-03-12</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -1040,7 +1069,7 @@ class="math display">\[v=\frac{\sqrt{5}-1}{\sqrt{5}+1}\]</span></p>
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">Edited on</span>
-      <time title="Modified: 2026-03-12 16:53:45" itemprop="dateModified" datetime="2026-03-12T16:53:45+00:00">2026-03-12</time>
+      <time title="Modified: 2026-03-12 16:58:14" itemprop="dateModified" datetime="2026-03-12T16:58:14+00:00">2026-03-12</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -1132,7 +1161,7 @@ class="math display">\[v=\frac{\sqrt{5}-1}{\sqrt{5}+1}\]</span></p>
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">Edited on</span>
-      <time title="Modified: 2026-03-12 16:53:45" itemprop="dateModified" datetime="2026-03-12T16:53:45+00:00">2026-03-12</time>
+      <time title="Modified: 2026-03-12 16:58:14" itemprop="dateModified" datetime="2026-03-12T16:58:14+00:00">2026-03-12</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -1229,7 +1258,7 @@ alt="图片" />
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">Edited on</span>
-      <time title="Modified: 2026-03-12 16:53:45" itemprop="dateModified" datetime="2026-03-12T16:53:45+00:00">2026-03-12</time>
+      <time title="Modified: 2026-03-12 16:58:14" itemprop="dateModified" datetime="2026-03-12T16:58:14+00:00">2026-03-12</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -1318,7 +1347,7 @@ alt="图片" />
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">Edited on</span>
-      <time title="Modified: 2026-03-12 16:53:45" itemprop="dateModified" datetime="2026-03-12T16:53:45+00:00">2026-03-12</time>
+      <time title="Modified: 2026-03-12 16:58:14" itemprop="dateModified" datetime="2026-03-12T16:58:14+00:00">2026-03-12</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -1410,7 +1439,7 @@ alt="图片" />
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">Edited on</span>
-      <time title="Modified: 2026-03-12 16:53:45" itemprop="dateModified" datetime="2026-03-12T16:53:45+00:00">2026-03-12</time>
+      <time title="Modified: 2026-03-12 16:58:14" itemprop="dateModified" datetime="2026-03-12T16:58:14+00:00">2026-03-12</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
