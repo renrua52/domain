@@ -106,5 +106,4 @@ deploy:
 
 # config of hexo-renderer-pandoc
 pandoc:
-  args:
-    - --mathjax
+  args: []
