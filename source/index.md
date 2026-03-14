@@ -21,3 +21,7 @@ Categories:
 ---
 
 A complete list of posts is [here](/domain/archives).
+
+---
+
+![](https://stardewvalleywiki.com/mediawiki/images/2/22/White_Chicken.png)
