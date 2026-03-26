@@ -6,7 +6,7 @@ categories:
   - Math
 ---
 
-纪念 mer 第一次做出三题，Ziri 决定为此次 [Codeforces Round](https://codeforces.com/contest/2204) 写题解，顺便回忆青春。
+Ziri 决定为此次 [Codeforces Round](https://codeforces.com/contest/2204) 写题解，顺便回忆青春。
 
 ## A. Passing The Ball
 
