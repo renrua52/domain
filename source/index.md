@@ -14,9 +14,10 @@ layout: page
 
 按分类：
 
-- [Journals](/domain/categories/Journal/)
-- [Math](/domain/categories/Math/)
-- [Chess](/domain/categories/Chess/)
+- [Journals](/domain/categories/Journal/) 是 Ziri 的随笔，关于一切。
+- [Food](/domain/categories/Food/) 是 Ziri 的食评，关于家乡和远乡的食物。
+- [Math](/domain/categories/Math/) 包含让 Ziri 感到有趣的理论问题；它们通常不很困难，也不很有用。
+- [Chess](/domain/categories/Chess/) 记录了 Ziri 提升国际象棋水平的经历。
 
 ---
 
