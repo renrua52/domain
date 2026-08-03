@@ -16,7 +16,7 @@ Ziri 的灵质空间目前包括四间建筑：
 
 - [養心堂](/domain/categories/Journal/) 存放 Ziri 的随笔，关于一切。
 - [知味齋](/domain/categories/Food/) 存放 Ziri 的食评，关于家乡和远乡的食物。
-- [算經閣](/domain/categories/Math/) 存放 Ziri 感到有趣的理论问题；它们通常不很困难，也不很有用。
+- [算經閣](/domain/categories/Science/) 存放 Ziri 感到有趣的理论问题；它们通常不很困难，也不很有用。
 - [忘憂軒](/domain/categories/Chess/) 存放 Ziri 提升国际象棋水平的记录。
 
 ---
