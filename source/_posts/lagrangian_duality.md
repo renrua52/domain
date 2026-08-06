@@ -3,7 +3,7 @@ title: Lagrangian Duality
 date: 2025-10-23
 mathjax: true
 categories:
-  - Math
+  - Science
 ---
 
 We consider an optimization problem over domain $\mathcal{D}\neq\emptyset$ in standard form, i.e. $$\begin{align}
