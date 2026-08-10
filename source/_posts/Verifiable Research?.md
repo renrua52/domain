@@ -1,6 +1,7 @@
 ---
 title: "Verifiable Research?"
 date: 2026-08-11
+mathjax: true
 categories:
   - "Science"
 ---
