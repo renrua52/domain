@@ -28,7 +28,7 @@
 <meta property="og:description" content="近期，笔者在同时考虑 AI4SCI 和 AI4AI 的 benchmark 应该怎么做。事实上笔者一直认为 AI4AI 应该被视为 AI4SCI 的一个子集，因为：  AI 是 Science。关于 AI 的知识目前普遍是经验性的，但这并不意味着 AI 不属于科学，科学可以是经验的；同时我们也期望着它可以更定量（physics of AI）。 研究模型是在一个完全可控的 universe 中探索（">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2026-08-11T00:00:00.000Z">
-<meta property="article:modified_time" content="2026-08-10T18:40:05.101Z">
+<meta property="article:modified_time" content="2026-08-10T18:40:23.289Z">
 <meta property="article:author" content="Ziri">
 <meta name="twitter:card" content="summary">
 
@@ -69,7 +69,119 @@
   <noscript>
     <link rel="stylesheet" href="/domain/css/noscript.css">
   </noscript>
-</head>
+<style>mjx-container[jax="SVG"] {
+  direction: ltr;
+}
+
+mjx-container[jax="SVG"] > svg {
+  overflow: visible;
+}
+
+mjx-container[jax="SVG"][display="true"] {
+  display: block;
+  text-align: center;
+  margin: 1em 0;
+}
+
+mjx-container[jax="SVG"][justify="left"] {
+  text-align: left;
+}
+
+mjx-container[jax="SVG"][justify="right"] {
+  text-align: right;
+}
+
+g[data-mml-node="merror"] > g {
+  fill: red;
+  stroke: red;
+}
+
+g[data-mml-node="merror"] > rect[data-background] {
+  fill: yellow;
+  stroke: none;
+}
+
+g[data-mml-node="mtable"] > line[data-line] {
+  stroke-width: 70px;
+  fill: none;
+}
+
+g[data-mml-node="mtable"] > rect[data-frame] {
+  stroke-width: 70px;
+  fill: none;
+}
+
+g[data-mml-node="mtable"] > .mjx-dashed {
+  stroke-dasharray: 140;
+}
+
+g[data-mml-node="mtable"] > .mjx-dotted {
+  stroke-linecap: round;
+  stroke-dasharray: 0,140;
+}
+
+g[data-mml-node="mtable"] > svg {
+  overflow: visible;
+}
+
+[jax="SVG"] mjx-tool {
+  display: inline-block;
+  position: relative;
+  width: 0;
+  height: 0;
+}
+
+[jax="SVG"] mjx-tool > mjx-tip {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+mjx-tool > mjx-tip {
+  display: inline-block;
+  padding: .2em;
+  border: 1px solid #888;
+  font-size: 70%;
+  background-color: #F8F8F8;
+  color: black;
+  box-shadow: 2px 2px 5px #AAAAAA;
+}
+
+g[data-mml-node="maction"][data-toggle] {
+  cursor: pointer;
+}
+
+mjx-status {
+  display: block;
+  position: fixed;
+  left: 1em;
+  bottom: 1em;
+  min-width: 25%;
+  padding: .2em .4em;
+  border: 1px solid #888;
+  font-size: 90%;
+  background-color: #F8F8F8;
+  color: black;
+}
+
+foreignObject[data-mjx-xml] {
+  font-family: initial;
+  line-height: normal;
+  overflow: visible;
+}
+
+.MathJax path {
+  stroke-width: 3;
+}
+
+mjx-container[display="true"] {
+  overflow: auto hidden;
+}
+
+mjx-container[display="true"] + br {
+  display: none;
+}
+</style></head>
 
 <body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
   <div class="headband"></div>
@@ -250,16 +362,12 @@ ziming），因此某种意义上是所有 AI4SCI 中最可做的一支。</li>
 <p>笔者能想到的保证创新性（3）的路径：</p>
 <ul>
 <li>做在线 bench，搜 open
-problem；未必很难，但是要解决它必然有旧知识到新知识的整合过程。<a
-href="#fn1" class="footnote-ref" id="fnref1"
-role="doc-noteref"><sup>1</sup></a></li>
+problem；未必很难，但是要解决它必然有旧知识到新知识的整合过程。<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a></li>
 <li>Simulator 环境如果能跑出新的现象，就自动成为一个 valid research
 problem。</li>
 <li>还有就是专家参与（例如 top researcher 和 agent
 的对话流，应该是一个非常高质量的数据）。参考很多 AI4SCI 已有的造题
-pipeline 还是有专家参与，合成并不是太成功。<a href="#fn2"
-class="footnote-ref" id="fnref2"
-role="doc-noteref"><sup>2</sup></a></li>
+pipeline 还是有专家参与，合成并不是太成功。<a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a></li>
 </ul>
 <p>看起来，两者重合的地方在 simulator as judge 这个路线上。</p>
 <h2 id="两种边界">两种边界</h2>
@@ -288,16 +396,13 @@ agent 的基础模型，在测评时的表现也倾向于更好。可以确认�
 ground truth
 泄漏，但这种相关性似乎是存在的。「这种相关性是否具备普遍性」是笔者认为值得深入研究的独立问题，尤其是对于关心
 posttrain 数据质量的人。</p>
-<section id="footnotes" class="footnotes footnotes-end-of-document"
-role="doc-endnotes">
-<hr />
+<section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes">
+<hr>
 <ol>
 <li id="fn1"><p>但是「搜集 open problem
-并尝试用模型攻克之」是有趣的，笔者最近也在做相关的尝试。<a
-href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+并尝试用模型攻克之」是有趣的，笔者最近也在做相关的尝试。<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
 <li id="fn2"><p>但是由于 AI4AI 具有完全可控的性质，合成也许是 promising
-的。这就是 ArchitectureIQ 的基本想法。<a href="#fnref2"
-class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+的。这就是 ArchitectureIQ 的基本想法。<a href="#fnref2" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
 </ol>
 </section>
 
