@@ -1,9 +1,9 @@
 ---
-title: "Verifiablizing Research - 1"
+title: Verifiablizing Research - Between Two Frontiers
 date: 2026-08-11
 mathjax: true
 categories:
-  - "Science"
+  - Science
 ---
 近期，笔者在同时考虑 AI4SCI 和 AI4AI 的 benchmark 应该怎么做。事实上笔者一直认为 AI4AI 应该被视为 AI4SCI 的一个子集，因为：
 
