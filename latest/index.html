@@ -241,7 +241,7 @@ mjx-container[display="true"] + br {
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/domain/archives/">
-          <span class="site-state-item-count">27</span>
+          <span class="site-state-item-count">26</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
@@ -263,160 +263,6 @@ mjx-container[display="true"] + br {
     </div>
 
     <div class="main-inner index posts-expand">
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://renrua52.github.io/2026/08/11/Verifiable%20Research?/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/domain/images/avatar.gif">
-      <meta itemprop="name" content="Ziri">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Domain 靈質空間">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content=" | Domain 靈質空間">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/domain/2026/08/11/Verifiable%20Research?/" class="post-title-link" itemprop="url">Verifiable Research?</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">Posted on</span>
-
-      <time title="Created: 2026-08-11 00:00:00" itemprop="dateCreated datePublished" datetime="2026-08-11T00:00:00+00:00">2026-08-11</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">In</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/domain/categories/Science/" itemprop="url" rel="index"><span itemprop="name">Science</span></a>
-        </span>
-    </span>
-
-  
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <p>近期，笔者在同时考虑 AI4SCI 和 AI4AI 的 benchmark
-应该怎么做。事实上笔者一直认为 AI4AI 应该被视为 AI4SCI
-的一个子集，因为：</p>
-<ol type="1">
-<li>AI 是 Science。关于 AI 的知识目前普遍是经验性的，但这并不意味着 AI
-不属于科学，科学可以是经验的；同时我们也期望着它可以更定量（physics of
-AI）。</li>
-<li>研究模型是在一个完全可控的 universe 中探索（in
-principle，每个参数都受到研究者控制、在其观察范围之内）（by
-ziming），因此某种意义上是所有 AI4SCI 中最可做的一支。</li>
-</ol>
-<p>所以本文将把 4SCI 和 4AI 的 benchmarking 放在同一框架下思考。</p>
-<p>笔者的出发点是，一个好的 benchmark 需要具备的性质包括但不限于：</p>
-<ol type="1">
-<li>可验证；</li>
-<li>够真实；</li>
-<li>有创新；</li>
-<li>够难。</li>
-</ol>
-<p>这里 1 和 3 似乎很多时候是矛盾的。事实上很多 benchmark 都在 3
-的边界游走，因为 1 需要定义一些 rubrics，但是往往 rubrics
-写的越清楚就越像竞赛题（例如 frontier science 的 research subset
-我觉得就和 olympiad subset 没有实质区别）。</p>
-<p>笔者能想到的几个保证可验证性（1）的路径：</p>
-<ul>
-<li>只看模型 loss，同一个 setting 哪个 agent 优化到的 loss
-低就牛逼。</li>
-<li>算力不对称，大算力获得可验证结果，但 agent 没办法直接模拟。4AI 和
-4physics 都能做，后者用 simulator 环境。</li>
-<li>反向设计：设计出具有某个性质的系统，环境验证这个性质。</li>
-</ul>
-<p>笔者能想到的保证创新性（3）的路径：</p>
-<ul>
-<li>做在线 bench，搜 open
-problem；未必很难，但是要解决它必然有旧知识到新知识的整合过程。<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a></li>
-<li>Simulator 环境如果能跑出新的现象，就自动成为一个 valid research
-problem。</li>
-<li>还有就是专家参与（例如 top researcher 和 agent
-的对话流，应该是一个非常高质量的数据）。参考很多 AI4SCI 已有的造题
-pipeline 还是有专家参与，合成并不是太成功。<a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a></li>
-</ul>
-<p>看起来，两者重合的地方在 simulator as judge 这个路线上。</p>
-<h2 id="两种边界">两种边界</h2>
-<p>如果真的要做 autoresearch，最终的大目标肯定是让模型输出「human
-knowledge
-边界」之外的东西。可是现在我们的目的是评测，假如我们知道如何对这样的输出写
-rubrics，其实我们或多或少预设了模型的目标。</p>
-<p>然而我们如果退而求其次，把 autoresearch
-的能力弱化为「发现自身已有知识之外的新知识」，这就给出了一些做评测的空间。例如「用爱因斯坦之前的知识
-pretrain，然后测试模型是否能提出相对论」，实际上就是在测评这样一种弱化了的能力。这样一种能力并不是
-trivial
-的，独立发明前人发明过的东西，在智力上是很有挑战性的，而且正是很多 top
-researcher 曾经做过的事情，</p>
-<p>换言之，我们不再要求模型突破「human knowledge
-边界」，只要求它能突破「pretrain knowledge 边界」。这正是解读 simulator
-as judge 的另一种视角。</p>
-<h2 id="难度来源">难度来源</h2>
-<p>一个需要注意到的事实是：ground truth
-的生成依赖算力，并不意味着问题就是困难的。如果合成题目的流程使用了模型，需要小心地保证题目的难度来源于外部
-compute
-真的引入了「知识边界以外的信息」，而不是仍然来源于模型本身「把这道题设计得很好」。所以，也许理想情况下，应该先用外部
-simulator
-做足够多的实验、发现非平凡的现象，再以「解释或预测该现象」为题目的内容；这里注意到「依赖外部计算」只是一道题非平凡的必要但不充分条件。</p>
-<p>一个 side note 是，在笔者制备题目的过程中，会发现：笔者使用的 coding
-agent 的基础模型，在测评时的表现也倾向于更好。可以确认，这并不是因为
-ground truth
-泄漏，但这种相关性似乎是存在的。「这种相关性是否具备普遍性」是笔者认为值得深入研究的独立问题，尤其是对于关心
-posttrain 数据质量的人。</p>
-<section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes">
-<hr>
-<ol>
-<li id="fn1"><p>但是「搜集 open problem
-并尝试用模型攻克之」是有趣的，笔者最近也在做相关的尝试。<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-<li id="fn2"><p>但是由于 AI4AI 具有完全可控的性质，合成也许是 promising
-的。这就是 ArchitectureIQ 的基本想法。<a href="#fnref2" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-</ol>
-</section>
-
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
 
     
 
@@ -1476,6 +1322,150 @@ href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
 <p>咖啡店上空是一株很大的桃树，现在正处于风一吹花瓣便会掉下来的时候；我得看着那杯拿铁的杯口，避免树叶子掉进咖啡里面去。视野里的那桌坐着两个女孩子，穿成我只在网络上见过的样子，抽烟的那一个给另一个拍照。「什么样的人会认识她们呢？」我单纯地好奇，并无一点爱慕或嫉妒。我觉得我和人们有着奇怪的距离，即使我们消费着相同的咖啡，逛着相同的景点。像制图软件里两个不同的图层。也许我全部的欲望，只是在图层间穿梭的能力——就像旅行，人会好奇遥远的地方——我也会好奇另外的图层。</p>
 <p>我并没有来得及感受到天津不同于北京的地方。我来不及听一段相声，也来不及把一切悲欢都看成相声。我觉得世纪钟和天津眼透露着人造景观共有的虚无感。我曾经答应一个朋友，把真正理解天津的机会留给彼此，我也没有来得及。</p>
 <p>我很吃惊，我在群里发了这咖啡馆的定位，竟然真有一位落单的同学来找到了我。此时他坐在我的对面，捏着一瓶喝完的易拉罐可乐，发出嘎吱嘎吱的响声，横着手机玩游戏。我们交换了名字，这样算朋友吗？我几乎忘记怎么交到朋友了。在天津大学拜访了一位过去的同学，这同学去年曾到北京租了一辆车，开九十公里去找高中时的前女友。过去我会认为这蠢极了。如今我会说，保留一点执念并不一定是桩坏事，好过随意就变得平庸。看着花瓣掉进咖啡里，比搅匀一杯拿铁更有意思。</p>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://renrua52.github.io/2026/04/02/Its_getting_late_early/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/domain/images/avatar.gif">
+      <meta itemprop="name" content="Ziri">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Domain 靈質空間">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content=" | Domain 靈質空間">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/domain/2026/04/02/Its_getting_late_early/" class="post-title-link" itemprop="url">It's getting late early.</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+
+      <time title="Created: 2026-04-02 00:00:00" itemprop="dateCreated datePublished" datetime="2026-04-02T00:00:00+00:00">2026-04-02</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">In</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/domain/categories/Journal/" itemprop="url" rel="index"><span itemprop="name">Journal</span></a>
+        </span>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <p>虽然也许只是心理暗示，但我总觉得自己和喜欢的棋手之间冥冥之中有着联系。这不是没有证据的。2023
+年的四月底，丁立人<a href="#fn1" class="footnote-ref" id="fnref1"
+role="doc-noteref"><sup>1</sup></a>成为了世界冠军，我则收到了清华的录取。我想我们二人都很难否认，我们没有足够强，却在恰当的时机被幸运眷顾。一位高中同学当时这样评价我：</p>
+<blockquote>
+<p>天赋很高，但没有那么高；学习很刻苦，但没有那么刻苦。</p>
+</blockquote>
+<p>Nepo
+伸出手认输的那一刻，丁的脸上并没有笑容，他似乎很困惑，他把脸埋在手里，躲闪着摄像机。所有人都在庆祝；正如所有人也在祝贺我。然而我想，我们二人都心知肚明，这并不是所向披靡的冠军领取早已属于他的荣誉的故事，这甚至算不上「成功」。初中时一位英语老师说，vocabulary.com
+上 success 一词的释义非常值得看，<a
+target="_blank" rel="noopener" href="https://www.vocabulary.com/dictionary/success">那里</a>如今写着：</p>
+<blockquote>
+<p>For some students, <em>success</em> in school means getting As and
+Bs. For others, it means getting straight As, starring in the school
+play, and winning the class election. <em>Success</em> means achieving a
+goal, and everyone’s goals are different.</p>
+</blockquote>
+<p>然而我们二人的生活真切地改变了；这种改变其实很好概括，一言以蔽之，我们都厌倦战斗了。丁立人一年都没有怎么比赛，在一年后的世界冠军赛上，输掉了一个荒唐的王兵残局——一位比笔者的年龄还小的棋手就此成为世界冠军。我则成为了一个人群中过于普通的学生，我埋头学着复分析，随即又忘掉；学着身边人的样子，说着那些意义不明的
+Yau<a href="#fn2" class="footnote-ref" id="fnref2"
+role="doc-noteref"><sup>2</sup></a>
+笑话：「不求上进，自甘中下」。不当一流棋手算自甘中下吗，我不知道；不在本科中稿几篇顶会论文呢？</p>
+<p>从优绩中逃脱，又掉进反优绩的陷阱。人们说，实习像滚雪球，大一大二进小厂，大三大四进中厂，毕业了便可以进大厂。人们说，特定的年纪干特定的事情，以至于由于我忘掉了复分析，我便错过了做纯数学的唯一机会，我只好在那些十八岁读博的同学面前自惭形秽，不再拥有花好几个下午看代数的权利，而是必须得攒论文。事实上，什么都像滚雪球，什么差距都越拉越大。不过我很庆幸，这种焦虑已经是过去的事情了，我想我终于找到了一点平衡；就像如今我早已不怕输棋了。</p>
+<p>上大学以来，我就几乎没有错过任何一场国际象棋赛事的直播。十几分钟才走一步棋的节奏，特别适合作为赶
+DDL
+的背景音。在昨天的候选人赛中，中村光把一个该赢的车兵残局走和了，三和一负；Sindarov
+则三胜一和，创下了候选人赛前四轮史无前例的战绩。亲爱的村主播在复盘视频里的懊恼显而易见：</p>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/eucaZ_CLTLM?si=C5TXDVzyQXeinieO" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
+</iframe>
+<p>他引用了棒球选手 Yogi Berra 的一句话：</p>
+<blockquote>
+<p>It’s getting late early.</p>
+</blockquote>
+<p>正如我快要二十岁了。我常开玩笑和朋友说，「男人过了二十就是六十」。我当然不至于很认真地这么认为，然而我对于二十岁这个数字的焦虑也是真实的。跑三千米的时候，我很爱做的一件事情是不停计算已经跑完的路程所占据的比例：一圈是十五分之二，两圈半是三分之一；跑至半程的时候，就安慰自己说，把刚刚已做的再做一遍就好了。令我很恐惧的是，我甚至无从得知，二十岁究竟是四分之一、三分之一或二分之一。</p>
+<p>世界的规则在我的周身扭曲又重塑。我想到一个很好的比喻，却缺乏精巧的语言，只好费劲描述给读者：我们身处物理世界，正如棋手坐在棋盘边——规则写在那里，下一步的全部变化，无非原子运动的推演，或穷尽棋步的搜索——而我们仍然举棋不定，只因我们的无知。最好的招法存在，我们无法比它做得更好；我们毕生所求，只是尽力不要显得太蠢。</p>
+<blockquote>
+<p>Chess is the struggle against the error.</p>
+</blockquote>
+<p>真的落下了太多吗？我可以二十岁开始学数学、二十岁下棋输给九岁小孩、二十岁仍旧对社会一无所知吗？我可以为重新推导出别人在十八世纪写下的结果欢欣鼓舞吗，当成自己的成功吗？一定要前不见古人、后不见来者，才能不让自己显得可悲吗？</p>
+<p>前几天受系里委托，从同辈中间征集给 2026
+级新生的、来自学长的寄语。问到一个我很佩服的同学，他发给我长长一段话，意思是要拒绝，理由大概是自己并不够强；他问，「xxx（另一个同学）有发表在
+xxx 上的论文，是否由他来撰写更合适呢？」</p>
+<p>这位同学旋即撤回了那一段长长的话，简单地回复道：「没问题，很高兴被邀请。」</p>
+<blockquote>
+<p>We tend to think of success as a triumph or victory, but if you look
+at its linguistic roots in Latin, <em>success</em> literally just means
+“result.” At some point several centuries ago people probably began
+using <em>success</em> as shorthand for “good success,” and eventually
+they dropped the <em>good</em> altogether. That would explain why in
+formal settings you still occasionally hear the phrase “good success,”
+even though we now think of all successes as good.</p>
+</blockquote>
+<section id="footnotes" class="footnotes footnotes-end-of-document"
+role="doc-endnotes">
+<hr />
+<ol>
+<li
+id="fn1"><p>丁立人是中国第一位获得世界冠军的棋手。他获得世界冠军赛资格的路途非常幸运：因俄罗斯棋手被禁赛而进入候选人赛，又因世界冠军卡尔森弃赛而递补出线。2024
+年世界冠军赛期间及获胜后，丁立人经历了持续时间极长的心理问题，竞技水平显著下降。在
+2025
+年世界冠军赛中，他在平分的情况下，于最后一轮输掉了一个基础的王兵残局，负于
+19 岁的 Dommaraju Gukesh，无缘加赛。<a href="#fnref1"
+class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn2"><p>Yau
+是丘成桐的英文名，他创立了清华的求真书院，招收很多年轻的学生。那些 15
+岁左右入学的学生，有些可以在 18 岁开始读博。<a href="#fnref2"
+class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+</ol>
+</section>
 
       
     </div>
