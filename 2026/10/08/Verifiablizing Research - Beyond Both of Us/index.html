@@ -28,7 +28,7 @@
 <meta property="og:description" content="一个不比 agent 更聪明的人，如何和 agent 一起，造一道足够难、可验证、难以 hack 的题目。  笔者近一个月合成了不少 Terminal-Bench-Science 或类似 benchmark 的物理方向题目。笔者本人物理学的并不深，1也没有很丰富的物理学研究经历，对于大多子领域没有了解或只有少量宽泛的了解。然而笔者认为，对于批量的造题而言，专业领域的知识并没有那么重要，反而 ge">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2026-10-08T00:00:00.000Z">
-<meta property="article:modified_time" content="2026-10-07T17:02:42.012Z">
+<meta property="article:modified_time" content="2026-10-08T13:38:14.971Z">
 <meta property="article:author" content="Ziri">
 <meta name="twitter:card" content="summary">
 
@@ -69,119 +69,7 @@
   <noscript>
     <link rel="stylesheet" href="/domain/css/noscript.css">
   </noscript>
-<style>mjx-container[jax="SVG"] {
-  direction: ltr;
-}
-
-mjx-container[jax="SVG"] > svg {
-  overflow: visible;
-}
-
-mjx-container[jax="SVG"][display="true"] {
-  display: block;
-  text-align: center;
-  margin: 1em 0;
-}
-
-mjx-container[jax="SVG"][justify="left"] {
-  text-align: left;
-}
-
-mjx-container[jax="SVG"][justify="right"] {
-  text-align: right;
-}
-
-g[data-mml-node="merror"] > g {
-  fill: red;
-  stroke: red;
-}
-
-g[data-mml-node="merror"] > rect[data-background] {
-  fill: yellow;
-  stroke: none;
-}
-
-g[data-mml-node="mtable"] > line[data-line] {
-  stroke-width: 70px;
-  fill: none;
-}
-
-g[data-mml-node="mtable"] > rect[data-frame] {
-  stroke-width: 70px;
-  fill: none;
-}
-
-g[data-mml-node="mtable"] > .mjx-dashed {
-  stroke-dasharray: 140;
-}
-
-g[data-mml-node="mtable"] > .mjx-dotted {
-  stroke-linecap: round;
-  stroke-dasharray: 0,140;
-}
-
-g[data-mml-node="mtable"] > svg {
-  overflow: visible;
-}
-
-[jax="SVG"] mjx-tool {
-  display: inline-block;
-  position: relative;
-  width: 0;
-  height: 0;
-}
-
-[jax="SVG"] mjx-tool > mjx-tip {
-  position: absolute;
-  top: 0;
-  left: 0;
-}
-
-mjx-tool > mjx-tip {
-  display: inline-block;
-  padding: .2em;
-  border: 1px solid #888;
-  font-size: 70%;
-  background-color: #F8F8F8;
-  color: black;
-  box-shadow: 2px 2px 5px #AAAAAA;
-}
-
-g[data-mml-node="maction"][data-toggle] {
-  cursor: pointer;
-}
-
-mjx-status {
-  display: block;
-  position: fixed;
-  left: 1em;
-  bottom: 1em;
-  min-width: 25%;
-  padding: .2em .4em;
-  border: 1px solid #888;
-  font-size: 90%;
-  background-color: #F8F8F8;
-  color: black;
-}
-
-foreignObject[data-mjx-xml] {
-  font-family: initial;
-  line-height: normal;
-  overflow: visible;
-}
-
-.MathJax path {
-  stroke-width: 3;
-}
-
-mjx-container[display="true"] {
-  overflow: auto hidden;
-}
-
-mjx-container[display="true"] + br {
-  display: none;
-}
-</style></head>
+</head>
 
 <body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
   <div class="headband"></div>
@@ -331,19 +219,27 @@ mjx-container[display="true"] + br {
 <p>一个不比 agent 更聪明的人，如何和 agent
 一起，造一道足够难、可验证、难以 hack 的题目。</p>
 </blockquote>
-<p>笔者近一个月合成了不少 <a target="_blank" rel="noopener" href="https://github.com/harbor-framework/terminal-bench-science">Terminal-Bench-Science</a>
-或类似 benchmark 的物理方向题目。笔者本人物理学的并不深，<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a>也没有很丰富的物理学研究经历，对于大多子领域没有了解或只有少量宽泛的了解。然而笔者认为，对于批量的造题而言，专业领域的知识并没有那么重要，反而
+<p>笔者近一个月合成了不少 <a
+target="_blank" rel="noopener" href="https://github.com/harbor-framework/terminal-bench-science">Terminal-Bench-Science</a>
+或类似 benchmark 的物理方向题目。笔者本人物理学的并不深，<a href="#fn1"
+class="footnote-ref" id="fnref1"
+role="doc-noteref"><sup>1</sup></a>也没有很丰富的物理学研究经历，对于大多子领域没有了解或只有少量宽泛的了解。然而笔者认为，对于批量的造题而言，专业领域的知识并没有那么重要，反而
 general 的判断能力、造题的总体方法论，才是合成质量的关键。</p>
 <p>一方面由于个人的智力已经很难在任何领域 cover
 模型了，另一方面由于生产力的需要，造题必然成为一个人机协作完成的任务。然而，借助
 agent 去难倒 agent
 本身，听起来略带「左脚踩右脚升天」的色彩，因而是非平凡的——其核心可以概括为：人和
-agent 要如何协作地产出一个人不会<a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a>、agent 也不会<a href="#fn3" class="footnote-ref" id="fnref3" role="doc-noteref"><sup>3</sup></a>的问题。</p>
+agent 要如何协作地产出一个人不会<a href="#fn2" class="footnote-ref"
+id="fnref2" role="doc-noteref"><sup>2</sup></a>、agent 也不会<a
+href="#fn3" class="footnote-ref" id="fnref3"
+role="doc-noteref"><sup>3</sup></a>的问题。</p>
 <p>一个最简单的 baseline 就是把 task 要求告诉 agent，然后全权交由 agent
-负责产出题目。这个 baseline 存在哪些问题呢？ 1. 有明显的模式坍缩：比如
-TBS
-物理方向上，经常构造成「给定一组模拟的仪器相应数据，重建系统参数，然后与真值数值比对」；
-2. 模型对自己出的题目存在明显的 bias。</p>
+负责产出题目。这个 baseline 存在哪些问题呢？</p>
+<ol type="1">
+<li><p>有明显的模式坍缩：比如 TBS
+物理方向上，经常构造成「给定一组模拟的仪器相应数据，重建系统参数，然后与真值数值比对」；</p></li>
+<li><p>模型对自己出的题目存在明显的 bias。</p></li>
+</ol>
 <p>人类历史上，有没有「提出一个自己不会解的，但是知道一定可解的问题」的例子呢？这正是棋类。棋类的伟大之处正在于，人类通过一些简单的规则，构建了一个复杂到他们自身都无法完全理解的游戏；时至今日，我们依然有理由相信，目前最好的机器依然是非常
 suboptimal
 的（因为新权重总能以压倒性优势碾压旧权重）。我们于是可以自然地从中
@@ -352,11 +248,17 @@ formulate 出一个 agent task，例如：「构建一个能击败当前 KataGo
 hack。</p>
 <p>我们能否将这样的经验迁移到更广义的任务构建上呢？注意到上面这个 task
 可以抽象为一个一般的形式：<strong>要求给出一个可被评测的系统，使得该系统的性能超过某一个标准</strong>。不难发现，许多常见的
-benchmarking 都属于此类： - 优化 NanoGPT 达到指定 loss 的耗时； - 优化
-GPU kernel，直接评测 wall clock time。</p>
-<p>在自然科学的一些分支中，这个一般形式是直接可迁移的——例如高能中有很多低维的分类问题<a href="#fn4" class="footnote-ref" id="fnref4" role="doc-noteref"><sup>4</sup></a>，设计 task 时可以让 agent
+benchmarking 都属于此类：</p>
+<ul>
+<li><p>优化 NanoGPT 达到指定 loss 的耗时；</p></li>
+<li><p>优化 GPU kernel，直接评测 wall clock time。</p></li>
+</ul>
+<p>在自然科学的一些分支中，这个一般形式是直接可迁移的——例如高能中有很多低维的分类问题<a
+href="#fn4" class="footnote-ref" id="fnref4"
+role="doc-noteref"><sup>4</sup></a>，设计 task 时可以让 agent
 利用有限样本给出一个尽可能好的分类器，然后对分类质量指标（准确率等）设置阈值来
-verify。<a href="#fn5" class="footnote-ref" id="fnref5" role="doc-noteref"><sup>5</sup></a></p>
+verify。<a href="#fn5" class="footnote-ref" id="fnref5"
+role="doc-noteref"><sup>5</sup></a></p>
 <p>相比于之前棋类的例子，这里还有一个小小的
 nuance：对于棋类，我们有理由相信「性能更好的系统是存在的」，因此不需要对可解性做过多的解释；但是自然科学问题中，显然不能随便划一个超高的阈值，然后声称这就是一道能难倒模型的题目了——因为这个阈值可能是原则上就不可达到的。换言之，造题者要能给出一个
 oracle，它能实现比模型的实现更优的性能。</p>
@@ -371,16 +273,23 @@ oracle 时，我们可以和 agent
 oracle，然后用它来划定任务的 verifier 阈值。而 agent
 被评测时，它需要判断出一万种方案中哪一种最优，才能获得完整
 reward——可以预想，它是不太可能直接做对这个判断的。而我们作为造题者，已经获知了这个判断的答案，因此我们能难住模型，也能让模型从这道题中学到东西。</p>
-<section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes">
-<hr>
+<section id="footnotes" class="footnotes footnotes-end-of-document"
+role="doc-endnotes">
+<hr />
 <ol>
-<li id="fn1"><p>这是令我惭愧的，也是我想改变的。<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-<li id="fn2"><p>这是因为综合来说人的智力有限，极少有人类掌握模型不掌握的知识；即使有，这种知识也是极稀疏的，很容易被外化然后训练到模型中。<a href="#fnref2" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-<li id="fn3"><p>这是题目难度的要求。<a href="#fnref3" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn1"><p>这是令我惭愧的，也是我想改变的。<a href="#fnref1"
+class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li
+id="fn2"><p>这是因为综合来说人的智力有限，极少有人类掌握模型不掌握的知识；即使有，这种知识也是极稀疏的，很容易被外化然后训练到模型中。<a
+href="#fnref2" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn3"><p>这是题目难度的要求。<a href="#fnref3"
+class="footnote-back" role="doc-backlink">↩︎</a></p></li>
 <li id="fn4"><p>这实际上就是很多早期的所谓「AI for
-science」，本质就是训个网络做端到端预测，只不过是物理领域的专门数据。<a href="#fnref4" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+science」，本质就是训个网络做端到端预测，只不过是物理领域的专门数据。<a
+href="#fnref4" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
 <li id="fn5"><p>笔者提交的一个 FrontierPhysics case
-就是这样构造的，它帮助笔者拿到了该项目的 coauthor。<a href="#fnref5" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+就是这样构造的，它帮助笔者拿到了该项目的 coauthor。<a href="#fnref5"
+class="footnote-back" role="doc-backlink">↩︎</a></p></li>
 </ol>
 </section>
 
